@@ -1,0 +1,64 @@
+//initailizing the array
+var newArr = {
+'a': 10,
+'b': 20,
+'c': 30,
+'d': 40,
+'e': 50,
+'f': 60,
+};
+console.log(newArr);
+
+//get the value for the given key
+console.log("The value for the key a is:")
+console.log(newArr['a'])
+
+// add a new element
+newArr['g '] =70;
+console.log(newArr);
+
+//removing an element from the array
+delete newArr['f'];
+console.log(newArr);
+
+//modify the value of an existing element
+console.log("The initial value of e: "+ newArr['e']);
+newArr['e'] =100;
+console.log("The value of e after modification is "+ newArr['e']);
+console.log(newArr);
+
+//search for the existence of a key
+console.log("z" in newArr);
+console.log("a" in newArr);
+
+//search for the existence of a value
+let value=20;
+console.log("Does the value "+ value + " exist in the array?");
+console.log(Object.values(newArr).includes(20));
+
+//alternative way
+let exist=0;
+for (var key in newArr){
+    var name = newArr[key];
+    if (name == value) {
+        exist = 1;
+        break;
+    }
+}
+
+if(exist){
+    console.log("Exists");
+}
+else{
+    console.log("Does not exist");
+}
+
+//loop through the array
+for (var key in newArr){
+    foo(key);
+}
+
+//foo function
+function foo(i1){
+      console.log("The value for the key "+ i1+" is " + newArr[i1]);
+}
