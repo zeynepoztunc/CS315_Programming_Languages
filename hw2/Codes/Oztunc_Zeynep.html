@@ -1,0 +1,59 @@
+//example of an unconditional exit using break
+var loopVar=10
+while (loopVar >=1) {
+  loopVar--;
+  break;
+}
+console.log("The value of loopVar after the loop is " + loopVar);
+
+//example of using continue
+loopVar=10
+while (loopVar >=1) {
+  loopVar--;
+  continue;
+}
+console.log("The value of loopVar after the loop is " + loopVar);
+
+//example of using break inside enclosing loops 
+//outer label
+outer: 
+   for (var i = 0; i < 5; i++) { 
+      console.log("Inside the outer loop, i: " + i); 
+      console.log("------------------------------")
+     
+      //inner label 
+      inner: 
+        for (var j = 6; j < 9; j++) { 
+         
+          //this break statement quits the outer loop
+          if (i == 2) {
+            console.log("Exiting from outer")
+            break outer; 
+          }
+          console.log("Inside the inner loop, j: " + j); 
+        }
+        console.log("\n")
+   }
+   
+//example of using continue inside enclosing loops 
+console.log("\n Using continue")
+
+//outer label
+outer: 
+   for (var i = 0; i < 5; i++) { 
+      console.log("Inside the outer loop, i: " + i); 
+      console.log("------------------------------")
+     
+      //inner label 
+      inner: 
+        for (var j = 6; j < 9; j++) { 
+         
+          console.log("Inside the inner loop, j: " + j); 
+          //this continue statement continues from the outer loop
+          if (i == 2) {
+            console.log("Continuing from outer \n")
+            continue outer; 
+          }
+        }
+        console.log("\n")
+   } 
